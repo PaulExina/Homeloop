@@ -1,8 +1,17 @@
 <div class="panel" role="main">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <%= image_tag("logo.png", alt:"Homeloop logo") %>
-            <h1> Find previous transactions next to you </h1>
+            <h3> Find previous transactions next to you </h3>
+        </div>
+        <div class="row">
+            <%= form_for(:query, html: {class: 'form-inline'}) do |f| %>
+            
+                <%= f.email_field :email, class: 'form-control'  %>
+            <p>
+                <%= f.submit %>
+            </p>
+            <% end %>
         </div>
     </div>
 </div>
