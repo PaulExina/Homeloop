@@ -4,7 +4,7 @@ class CreateTransactions < ActiveRecord::Migration[5.1]
       t.integer :trans_id
       t.integer :rooms
       t.integer :area
-      t.float :price
+      t.integer :price
       t.float :lat
       t.float :lon
       t.string :date

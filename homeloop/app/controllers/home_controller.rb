@@ -11,8 +11,7 @@ class HomeController < ApplicationController
         lat = params['query_lat'].to_f
         lon = params['query_lon'].to_f
     /2 - Create the query object/
-        @query = Query.new(:email => email, :lat => lat, :lon => lon, :res_count => 0)
-        @query.save
+        @query = Query.create(:email => email, :lat => lat, :lon => lon, :res_count => 0)
     /3 - Redirect to results controller/
         redirect_to '/results'
   end

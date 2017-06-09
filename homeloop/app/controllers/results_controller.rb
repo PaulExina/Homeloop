@@ -2,22 +2,27 @@ class ResultsController < ApplicationController
   def index
 
     /1 - Get the user location/
-    last_query = Query.last
-    coords = puts "#{last_query[:lat]},#{last_query[:lon]}"
-    user_location = Geocoder.search("48.7673019,2.248758").first.data["formatted_address"] 
+    @last_query = Query.last
+    user_location = full_address(@last_query[:lat], @last_query[:lon])
     @street_name = user_location.split(",")[0]
     @city_name = user_location.split(",")[1]+user_location.split(",")[2]
 
     /2 - Get the transactions list/
-    @transactions_array = [
-      {:id => 1, :rooms => 1, :area => 20, :price => 200100, :lat => 48.870808,:lon => 2.353689, :date => '2016-01-15'},
-      {:id => 1, :rooms => 1, :area => 20, :price => 200100, :lat => 48.870808,:lon => 2.353689, :date => '2016-01-15'},
-      {:id => 1, :rooms => 1, :area => 20, :price => 200100, :lat => 48.870808,:lon => 2.353689, :date => '2016-01-15'},
-      {:id => 1, :rooms => 1, :area => 20, :price => 200100, :lat => 48.870808,:lon => 2.353689, :date => '2016-01-15'},
-      {:id => 1, :rooms => 1, :area => 20, :price => 200100, :lat => 48.870808,:lon => 2.353689, :date => '2016-01-15'},
-      {:id => 1, :rooms => 1, :area => 20, :price => 200100, :lat => 48.870808,:lon => 2.353689, :date => '2016-01-15'},
-      {:id => 1, :rooms => 1, :area => 20, :price => 200100, :lat => 48.870808,:lon => 2.353689, :date => '2016-01-15'},
-      {:id => 1, :rooms => 1, :area => 20, :price => 200100, :lat => 48.870808,:lon => 2.353689, :date => '2016-01-15'}
-    ]
+    @transactions_array = Transaction.nearest_transactions(@last_query[:lat], @last_query[:lon])
+    
   end
+
+  /Returns the full formatted address /
+  def full_address(lat, lon)
+    return Geocoder.search(lat.to_s+","+lon.to_s).first.data["formatted_address"] 
+  end 
+
+  /Returns a minified address only street and city names/
+  def minified_address(lat, lon)
+    address = full_address(lat,lon);
+    return address.split(",")[0]+","+address.split(",")[1]
+  end
+  helper_method :minified_address
+
+  
 end
