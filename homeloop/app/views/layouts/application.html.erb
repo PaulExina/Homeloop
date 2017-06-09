@@ -2,10 +2,24 @@
 <html>
   <head>
     <title>Homeloop</title>
+    <meta name="viewport" content="width=device-width" />
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script>
+          function initMap() {
+            // Create a map object and specify the DOM element for display.
+            var map = new google.maps.Map(document.getElementById('map'), {
+              center: {lat: -34.397, lng: 150.644},
+              scrollwheel: false,
+              zoom: 8
+            });
+          } 
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPHXvwPeRpU0w7kch8Im7-0XStD79OGkQ&callback=initMap" async defer></script>
+
   </head>
 
   <body>

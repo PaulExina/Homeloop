@@ -1,0 +1,143 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$font : 'Cantarell', sans-serif;
+$break-medium: 768px;
+$break-small: 639px;
+$break-extra-small: 460px;
+$primary-blue: #357ebd;
+
+.home-panel {
+    background-image: url(paris.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0;
+    border-width: 0;
+    display: block;
+    text-align: center; 
+    height: 50%;
+    font-family : $font;
+    
+    img{
+        height :70px;
+        margin-top : 8%;
+    }
+
+    h5{
+        color: white;
+        font-weight: bold;
+        margin-bottom : 5%; 
+    }
+
+    form{
+
+        margin-bottom : 5%; 
+        font-family: 'Quicksand', sans-serif;
+        
+         #query_email{
+            width: 30%;
+            font-weight: bold;
+        }        
+        .btn{
+            font-weight: bold;
+        }
+
+        #query_lat, #query_lon{
+            display: none;
+        }
+    }
+
+   
+
+   
+    @media screen and (max-width: $break-medium) and (min-width: $break-small) {
+        
+        #query_email{
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+
+    @media screen and (max-width: $break-small){
+        
+        img{
+            height :50px;
+            margin-top : 8%;
+         }   
+
+        #query_email{
+            margin-left : 25%;
+            width: 50%;
+            margin-bottom : 3%;
+        }
+    }
+
+    @media screen and (max-width: $break-extra-small){
+        img{
+            height :40px;
+            margin-top : 8%;
+         }  
+    }
+}
+
+
+
+.steps {
+    font-family : $font;
+    margin-top : 3%;
+    text-align: center; 
+    
+    .col-xs-offset-1{
+        margin-left: 13%;
+    }
+
+    h4{
+        color : $primary-blue;
+        font-weight: bolder;
+    }
+
+    p{
+        font-weight: bolder;
+    }
+
+    img{
+        margin : 7%;
+        height : 70px;
+    }
+
+    .btn-circle.btn-xl.disabled {
+        margin: 1%;
+        width: 70px;
+        height: 70px;
+        padding: 10px 16px;
+        font-size: 24px;
+        line-height: 1.33;
+        border-radius: 35px;
+        opacity: 1;
+    }
+
+    @media screen and (max-width: $break-small){
+        img{
+            margin:0;
+            margin-bottom: 3%;
+            height : 50px;
+        }
+
+        .btn-circle.btn-xl.disabled {
+            width: 50px;
+            height: 50px;
+            font-size: 19px;
+            text-align: center;
+         }
+
+        .col-xs-offset-1{
+            margin-left: 0%;
+        }
+
+        .col-xs-3{
+                width: 100%;
+        }
+    }
+
+}

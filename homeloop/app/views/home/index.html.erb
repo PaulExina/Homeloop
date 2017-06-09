@@ -1,0 +1,35 @@
+<div class="panel home-panel" role="main">
+    <div class="container-fluid">
+        <div class="row">
+            <%= image_tag("full_logo.png", alt:"Homeloop logo") %>
+            <h5> Find previous transactions next to you </h5>
+        </div>
+        <div class="row">
+            <%= form_tag({controller:"home", action:"new_query"}, method: "get", class: 'form-inline', id: "query_form") do %>
+                <%= email_field_tag 'query_email',nil,{placeholder:'Enter your e-mail...', class: 'form-control'}  %>
+                <%= text_area_tag :query_lat, 0%>
+                <%= text_area_tag :query_lon, 0%>
+                <%= submit_tag("Let's go !", class: 'btn btn-primary', id: 'query_submit')%>
+            <% end %>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row steps">
+        <div class="col-xs-offset-1 col-xs-3">
+            <h4> STEP 1 </h4>
+            <p> Enter your email in the input field </p>
+            <%= image_tag("at-sign.png", alt:"At logo") %>
+        </div>
+        <div class=" col-xs-3">
+            <h4> STEP 2 </h4>
+            <p>Click on <b>"Let's go"</b> and get your position</p>
+            <%= image_tag("position.png", alt:"Position logo") %>
+        </div>
+        <div class=" col-xs-3">
+            <h4> STEP 3 </h4>
+            <p>Get a table listing of the transactions around you</p>
+            <button type="button" class="btn btn-primary btn-circle btn-xl disabled"><i class="glyphicon glyphicon-list"></i></button>
+        </div>
+    </div>
+</div>
