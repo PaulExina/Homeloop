@@ -6,6 +6,8 @@ $font-josefin : 'Josefin Sans', sans-serif;
 $break-medium: 768px;
 $break-small: 639px;
 $break-extra-small: 460px;
+$break-large: 1620px;
+$break-extra-large: 1706px;
 $primary-blue: #357ebd;
 
 .results-panel {
@@ -43,6 +45,7 @@ $primary-blue: #357ebd;
 
         .col-xs-offset-2{
             margin-left : 35%;
+            width: 240px;
         }
         .col-xs-2{
             a{
@@ -54,12 +57,69 @@ $primary-blue: #357ebd;
     
 
 
+    @media screen and (max-width: $break-small){
+        
+        img{
+            height :50px;
+            margin-top : 8%;
+         } 
+
+         .user-location {
+
+            .col-xs-offset-2{
+                margin-left: 20%;
+            }
+        } 
+
+        
+    }
+
+    @media screen and (max-width: $break-extra-small){
+        img{
+            height :40px;
+            margin-top : 8%;
+         }  
+    }
+
+    @media screen and (max-width: 682px){
+        .user-location {
+
+            .col-xs-offset-2{
+                margin-left: 24%;
+            }
+        }
+    }
+
+    @media screen and (max-width: 550px){
+        .user-location {
+
+            .col-xs-offset-2{
+                margin-left: 0; 
+                width : 100%;
+            }
+            .col-xs-2{
+                width : 100%;
+                a{
+                    margin : 5%;
+                }
+            }
+        }
+    }
+    
+
+
+
 }
 
 .results-container{
     text-align: center;
     font-family: $font-josefin;
     margin-top: 2%; 
+ 
+    .col-xs-offset-1{
+        margin-left: 2%;
+        margin-top: 5%;
+    }
 
     .table-hover tbody tr:hover{
         background-color: $primary-blue;
@@ -74,7 +134,8 @@ $primary-blue: #357ebd;
     }
 
     table {
-        margin-top: 10%;
+       
+        
         thead{
             font-weight: bold;
             font-size: 18px;
@@ -82,7 +143,7 @@ $primary-blue: #357ebd;
 
         tbody{
             
-            font-size: 17px;
+            font-size: 14px;
         }
     }
 
@@ -93,13 +154,154 @@ $primary-blue: #357ebd;
 
     #map {
         height: 500px;
-        width: 500px;
+        width: 700px;
         box-shadow: 2px 2px 10px #B1B1B1;
         margin: 5%;
-        margin-left:10%;    
+        margin-left:19%;    
     }
    
    textarea{
        display: none;
    }
+
+   @media screen and (max-width: 1706px){
+        
+        #map{
+           height: 500px;
+            width: 600px;    
+            margin: 5%;
+            margin-left: 19%;
+        }  
+
+        .col-xs-offset-1.col-xs-6{
+            width : 51%;
+        }
+        
+    }
+
+    @media screen and (max-width: 1640px){
+        
+         #map{
+            height: 500px;
+            width: 500px;
+            margin-top: 5%; 
+            margin-left: 5%;
+        } 
+
+        .col-xs-offset-1.col-xs-6{
+            width : 60%;
+        }
+        
+    }
+
+    @media screen and (max-width: 1500px){
+        
+        .col-xs-offset-1{
+            margin-left: 1%;
+        }
+         #map{
+            height: 480px;
+            width: 500px;
+        }   
+    }
+
+    @media screen and (max-width: 1420px){
+    
+         #map{
+            height: 480px;
+            width: 480px;
+        }     
+    }
+
+    @media screen and (max-width: 1370px){
+        
+         #map{
+            height: 450px;
+            width: 430px;
+            
+        } 
+
+    }
+
+    @media screen and (max-width: 1270px){
+        
+       
+         #map{
+            height: 380px;
+            width: 380px;
+            
+        } 
+
+        .col-xs-offset-1.col-xs-6{
+            width : 62%;
+        }
+
+    }
+
+    @media screen and (max-width: 1210px){
+        
+        #map{
+            height: 500px;
+            width: 600px;
+            margin: auto;
+             margin-top: 5%;
+             margin-bottom: 5%;
+        } 
+
+        .col-xs-offset-1.col-xs-6{
+            margin-top : 1%;
+            margin-left: 5%;
+            width : 90%;
+        }
+        
+        .col-xs-4{
+            width : 100%;
+        }
+
+    }
+
+    @media screen and (max-width: 835px){
+        #map{
+            height: 400px;
+            width: 500px;
+        }
+        
+        .col-xs-offset-1.col-xs-6{
+            margin-top: 1%;
+            margin-left: 1%;
+            width: 98%;
+        }
+    }
+
+    
+
+    @media screen and (max-width: 640px){
+        table{
+            thead{
+                font-size: 15px;
+            }
+
+            tbody{
+                font-size: 13px;
+            }
+        }
+    }
+
+
+    @media screen and (max-width: 570px){
+        table{
+            margin-top: 5%; 
+
+            .address-col{
+                display: none;
+            }
+        }
+
+        #map{
+            margin-top: 5%;
+            height: 300px;
+            width: 300px;
+        }
+
+    }
 }

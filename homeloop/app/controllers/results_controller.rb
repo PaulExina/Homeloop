@@ -1,6 +1,5 @@
 class ResultsController < ApplicationController
   def index
-
     /1 - Get the user location/
     @last_query = Query.last
     user_location = full_address(@last_query[:lat], @last_query[:lon])
@@ -24,5 +23,7 @@ class ResultsController < ApplicationController
   end
   helper_method :minified_address
 
-  
+  def new_search
+    redirect_to 'home/index'
+  end 
 end

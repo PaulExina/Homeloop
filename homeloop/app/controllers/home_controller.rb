@@ -1,9 +1,9 @@
 class HomeController < ApplicationController
   def index
+   
   end
 
   def new_query
-
     /1 - Get the query params/
         /a - Get the email input value/
         email = params['query_email']
@@ -15,4 +15,5 @@ class HomeController < ApplicationController
     /3 - Redirect to results controller/
         redirect_to '/results'
   end
+
 end

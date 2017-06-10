@@ -9,7 +9,7 @@
                 <%= email_field_tag 'query_email',nil,{placeholder:'Enter your e-mail...', class: 'form-control'}  %>
                 <%= text_area_tag :query_lat, 0%>
                 <%= text_area_tag :query_lon, 0%>
-                <%= submit_tag("Let's go !", class: 'btn btn-primary', id: 'query_submit')%>
+                <%= submit_tag("Let's go !", class: 'btn btn-primary disabled', id: 'query_submit')%>
             <% end %>
         </div>
     </div>

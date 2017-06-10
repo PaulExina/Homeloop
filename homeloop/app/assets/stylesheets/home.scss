@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $font : 'Cantarell', sans-serif;
 $break-medium: 768px;
-$break-small: 639px;
+$break-small: 640px;
 $break-extra-small: 460px;
 $primary-blue: #357ebd;
 
@@ -52,10 +52,11 @@ $primary-blue: #357ebd;
 
    
     @media screen and (max-width: $break-medium) and (min-width: $break-small) {
-        
-        #query_email{
-            display: inline-block;
-            vertical-align: middle;
+        form {
+            #query_email{
+                display: inline-block;
+                vertical-align: middle;
+            }
         }
     }
 
@@ -66,10 +67,12 @@ $primary-blue: #357ebd;
             margin-top : 8%;
          }   
 
-        #query_email{
-            margin-left : 25%;
-            width: 50%;
-            margin-bottom : 3%;
+        form{ 
+            #query_email{
+                margin-left : 25%;
+                width: 50%;
+                margin-bottom : 3%;
+            }
         }
     }
 
@@ -78,6 +81,7 @@ $primary-blue: #357ebd;
             height :40px;
             margin-top : 8%;
          }  
+         
     }
 }
 

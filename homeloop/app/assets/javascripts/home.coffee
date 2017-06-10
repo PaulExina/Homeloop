@@ -3,11 +3,14 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 document.addEventListener 'DOMContentLoaded', ->
-
+    
     showPosition = (position) ->
         document.getElementById('query_lat').innerHTML = position.coords.latitude
         document.getElementById('query_lon').innerHTML = position.coords.longitude
+        document.getElementById('query_submit').className="btn btn-primary"
 
     if navigator.geolocation
         navigator.geolocation.getCurrentPosition showPosition
     return
+
+    
