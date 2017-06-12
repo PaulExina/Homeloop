@@ -23,7 +23,5 @@ class ResultsController < ApplicationController
   end
   helper_method :minified_address
 
-  def new_search
-    redirect_to 'home/index'
-  end 
+
 end

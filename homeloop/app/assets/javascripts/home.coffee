@@ -4,6 +4,7 @@
 
 document.addEventListener 'DOMContentLoaded', ->
     
+    # Get user location
     showPosition = (position) ->
         document.getElementById('query_lat').innerHTML = position.coords.latitude
         document.getElementById('query_lon').innerHTML = position.coords.longitude

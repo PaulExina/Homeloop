@@ -13,12 +13,16 @@ transactions_array = transactions_examples.split("\n");
 transactions_array.drop(1).each do |tr|
 
     tr_array = tr.split(",")
-    Transaction.create(:trans_id => tr_array[0].to_i, 
+    transaction = Transaction.find_by(trans_id: tr_array[0].to_i)
+
+    if (transaction == nil)
+        Transaction.create(:trans_id => tr_array[0].to_i, 
                        :rooms => tr_array[1].to_i,
                        :area => tr_array[2].to_i,
                        :price => tr_array[3].to_i,
                        :lat => tr_array[4].to_f,
                        :lon => tr_array[5].to_f,
                        :date => tr_array[6])
-                       
+
+
 end

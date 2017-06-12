@@ -1,7 +1,8 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$font : 'Cantarell', sans-serif;
+$font-cantarell : 'Cantarell', sans-serif;
+$font-josefin : 'Josefin Sans', sans-serif;
 $break-medium: 768px;
 $break-small: 640px;
 $break-extra-small: 460px;
@@ -17,7 +18,7 @@ $primary-blue: #357ebd;
     display: block;
     text-align: center; 
     height: 50%;
-    font-family : $font;
+    font-family : $font-cantarell;
     
     img{
         height :70px;
@@ -88,7 +89,7 @@ $primary-blue: #357ebd;
 
 
 .steps {
-    font-family : $font;
+    font-family : $font-josefin;
     margin-top : 3%;
     text-align: center; 
     
@@ -96,14 +97,6 @@ $primary-blue: #357ebd;
         margin-left: 13%;
     }
 
-    h4{
-        color : $primary-blue;
-        font-weight: bolder;
-    }
-
-    p{
-        font-weight: bolder;
-    }
 
     img{
         margin : 7%;
@@ -111,7 +104,7 @@ $primary-blue: #357ebd;
     }
 
     .btn-circle.btn-xl.disabled {
-        margin: 1%;
+        margin: 6%;
         width: 70px;
         height: 70px;
         padding: 10px 16px;

@@ -42,8 +42,9 @@
                                     <td>Date</td>
                                 </b></thead>
                                 <tbody>
-                                    <% @transactions_array[0..7].each do |t| %>
-                                    <tr>
+                                    <% index = 0 %>
+                                    <% @transactions_array[0..7].each do |t| %>    
+                                    <tr class="transaction-row" index="<%=index%>">
                                         <td><%= t[:trans_id] %></td>
                                         <td class="address-col">
                                             <% address = minified_address(t[:lat],t[:lon]).split(',') %> 
@@ -56,6 +57,7 @@
                                         <td><%= t[:rooms] %></td>
                                         <td><%= t[:date] %></td>
                                     </tr>
+                                    <% index = index+1%>
                                     <% end %>
                                 </tbody>    
                             </table>
@@ -63,6 +65,7 @@
                      
                      <% 
                             i = 1
+                            index = index+1
                             while i < nb_pages do %>
                                <div class="item">
                                     <table class="table table-striped table-hover">
@@ -76,7 +79,7 @@
                                         </b></thead>
                                         <tbody>
                                             <% @transactions_array[8*i..8*i+7].each do |t| %>
-                                            <tr>
+                                            <tr class="transaction-row" index="<%=index%>">
                                                 <td><%= t[:trans_id] %></td>
                                                 <td class="address-col">
                                                     <% address = minified_address(t[:lat],t[:lon]).split(',') %> 
@@ -89,6 +92,7 @@
                                                 <td><%= t[:rooms] %></td>
                                                 <td><%= t[:date] %></td>
                                             </tr>
+                                            <% index = index+1%>
                                             <% end %>
                                         </tbody>    
                                     </table>
