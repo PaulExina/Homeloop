@@ -14,8 +14,8 @@ ActiveRecord::Schema.define(version: 20170609161428) do
 
   create_table "queries", force: :cascade do |t|
     t.string "email"
-    t.float "lat"
-    t.float "lon"
+    t.decimal "lat"
+    t.decimal "lon"
     t.integer "res_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -26,9 +26,9 @@ ActiveRecord::Schema.define(version: 20170609161428) do
     t.integer "rooms"
     t.integer "area"
     t.integer "price"
-    t.float "lat"
-    t.float "lon"
-    t.string "date"
+    t.decimal "lat"
+    t.decimal "lon"
+    t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -4,10 +4,10 @@ class CreateTransactions < ActiveRecord::Migration[5.1]
       t.integer :trans_id
       t.integer :rooms
       t.integer :area
-      t.integer :price
-      t.float :lat
-      t.float :lon
-      t.string :date
+      t.decimal :price
+      t.decimal :lat
+      t.decimal :lon
+      t.date :date
 
       t.timestamps
     end

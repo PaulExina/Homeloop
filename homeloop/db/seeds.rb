@@ -21,7 +21,7 @@ transactions_array.drop(1).each do |tr|
                        :price => tr_array[3].to_i,
                        :lat => tr_array[4].to_f,
                        :lon => tr_array[5].to_f,
-                       :date => tr_array[6])
+                       :date => tr_array[6].to_date)
 
     end
 end
