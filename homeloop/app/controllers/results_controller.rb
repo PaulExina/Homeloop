@@ -1,7 +1,7 @@
 class ResultsController < ApplicationController
   def index
     /1 - Get the user location/
-    @last_query = Query.last
+    @last_query = Query.find_by(id: params[:query_id])
     user_location = full_address(@last_query[:lat], @last_query[:lon])
     @street_name = user_location.split(",")[0]
     @city_name = user_location.split(",")[1]+user_location.split(",")[2]

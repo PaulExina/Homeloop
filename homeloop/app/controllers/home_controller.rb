@@ -11,8 +11,8 @@ class HomeController < ApplicationController
         lon = params['query_lon'].to_f
     /2 - Create the query object/
         @query = Query.create(:email => email, :lat => lat, :lon => lon, :res_count => 0)
-    /3 - Redirect to results controller/
-        redirect_to '/results'
+    /3 - Redirect to results controller/ 
+        redirect_to :controller =>'results', :query_id => @query.id
   end
 
 end
